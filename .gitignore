@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Environment & secrets  — NEVER commit API keys
+.env
+.env.*
+*.token
+wandb_api_key*
+secrets/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Dataset shards (large binary files)
+*.npy
+*.npz
+dataset_cache/
+
+# Model checkpoints (large — store in W&B Artifacts or Google Drive)
+checkpoints/
+weights/
+*.pth
+*.ckpt
+
+# Outputs
+outputs/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# W&B local run cache
+wandb/

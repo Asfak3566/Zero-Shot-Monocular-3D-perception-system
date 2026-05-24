@@ -1,0 +1,33 @@
+{
+  "model": "TwoDThreeDNetV2 (Model D)",
+  "dataset": "master_train_64k_v2",
+  "wandb_run": "5uj44tug",
+  "wandb_project": "twoDthreeDnet_Ablation",
+  "overall": {
+    "bev_mae_m": 0.8937,
+    "bev_iou": 0.3796,
+    "orientation_err_deg": 6.3665,
+    "size_mae_m": 0.1618
+  },
+  "per_class": {
+    "car":        { "bev_mae_m": 0.9487, "bev_iou": 0.4720, "n_samples": 4587 },
+    "bus":        { "bev_mae_m": 1.2559, "bev_iou": 0.5019, "n_samples": 1024 },
+    "pedestrian": { "bev_mae_m": 0.6823, "bev_iou": 0.2423, "n_samples": 2429 },
+    "cyclist":    { "bev_mae_m": 0.8230, "bev_iou": 0.2416, "n_samples": 1560 }
+  },
+  "by_range": {
+    "0_20m":   { "bev_mae_m": 0.9001, "bev_iou": 0.3681 },
+    "20_60m":  { "bev_mae_m": 0.6471, "bev_iou": 0.4820 },
+    "60_100m": { "bev_mae_m": 1.0397, "bev_iou": 0.3195 }
+  },
+  "by_camera": {
+    "low_pitch":   { "bev_mae_m": 0.8727 },
+    "high_pitch":  { "bev_mae_m": 0.8979 },
+    "long_focal":  { "bev_mae_m": 0.8937 }
+  },
+  "best": {
+    "bev_mae_m": 0.8869,
+    "bev_iou": 0.3936,
+    "checkpoint_step": 4750
+  }
+}

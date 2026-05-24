@@ -1,0 +1,40 @@
+dataset:
+  target_samples: 100000
+  T: 12
+  P: 4
+  max_agents: 16
+  neighbor_radius: 30.0
+  min_track_length: 16
+  D_in: 23
+  num_classes: 3 # vehicle, pedestrian, cyclist
+
+model:
+  d_model: 128
+  nhead: 8
+  num_temporal_layers: 4
+  num_social_layers: 2
+  num_decoder_layers: 4
+  dropout: 0.1
+
+loss:
+  lambda_pos: 1.0
+  lambda_ori: 2.0
+  lambda_size: 0.1
+  lambda_smooth: 0.5
+  lambda_collision: 1.0
+  enable_smoothness_loss: true
+  enable_collision_loss: true
+  safe_distance_ped: 1.5
+  safe_distance_veh: 2.5
+
+training:
+  batch_size: 32
+  lr: 0.0003
+  weight_decay: 0.0001
+  epochs: 50
+  grad_clip: 1.0
+  device: "cuda" # or "cpu"
+
+# Auxiliary losses (collision + smoothness) scale from 0 → full weight over this
+# many epochs. Prevents gradient explosion from random initial predictions.
+loss_warmup_epochs: 10
